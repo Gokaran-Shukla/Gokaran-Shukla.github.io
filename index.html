@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gokaran Shukla</title>
+<meta name="description" content="Dr. Gokaran Shukla is a computational condensed matter physicist at King Abdullah University of Science and Technology (KAUST), working on spin and orbital Hall effects, spin–orbit torques, nonlinear Hall transport and magnetic tunnel junctions from first principles.">
+<meta name="author" content="Gokaran Shukla">
+<meta name="keywords" content="Gokaran Shukla, KAUST, computational physics, condensed matter theory, orbital Hall effect, spin Hall effect, spin-orbit torque, orbitronics, Berry curvature dipole, nonlinear Hall effect, magnetic tunnel junctions, DFT, Wannier90">
+<meta property="og:title" content="Gokaran Shukla — Computational Condensed Matter Physics, KAUST">
+<meta property="og:description" content="First-principles theory of spin and orbital transport, spin–orbit torques and magnetic tunnel junctions.">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://gokaran-shukla.github.io/">
+<link rel="canonical" href="https://gokaran-shukla.github.io/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Gokaran Shukla",
+  "honorificPrefix": "Dr.",
+  "jobTitle": "Postdoctoral Research Fellow",
+  "affiliation": { "@type": "CollegeOrUniversity", "name": "King Abdullah University of Science and Technology (KAUST)" },
+  "alumniOf": [
+    { "@type": "CollegeOrUniversity", "name": "Trinity College Dublin" },
+    { "@type": "CollegeOrUniversity", "name": "Indian Institute of Technology Kanpur" }
+  ],
+  "email": "mailto:gokaran.shukla@kaust.edu.sa",
+  "knowsAbout": ["Orbital Hall effect", "Spin Hall effect", "Spin-orbit torque", "Berry curvature dipole", "Nonlinear Hall effect", "Magnetic tunnel junctions", "Density functional theory"],
+  "url": "https://gokaran-shukla.github.io/",
+  "sameAs": ["https://scholar.google.com/citations?user=ChR9ktYAAAAJ", "https://github.com/Gokaran-Shukla"]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400&display=swap">
+<style>
+/* Layout: fixed identity column on the left (name, post, contact) and a single reading column on the right, as on a faculty profile page. */
+:root {
+  --bg: #ffffff;
+  --panel: #f5f6f8;
+  --ink: #16191f;
+  --muted: #5b6270;
+  --rule: #dde0e6;
+  --accent: #1f3a68;
+  --f-head: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --f-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg: #111318; --panel: #181b22; --ink: #e6e8ec; --muted: #9aa1ae; --rule: #2a2f39; --accent: #9db6e3; color-scheme: dark; }
+}
+:root[data-theme="dark"] { --bg: #111318; --panel: #181b22; --ink: #e6e8ec; --muted: #9aa1ae; --rule: #2a2f39; --accent: #9db6e3; color-scheme: dark; }
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg); color: var(--ink);
+  font-family: var(--f-body); font-size: 16px; line-height: 1.7;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+a { color: var(--accent); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.page { max-width: 1120px; margin: 0 auto; display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 64px; padding-block: 56px 72px; }
+.page > * { min-width: 0; }
+
+/* identity column */
+.id { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 32px); align-self: start; }
+.id h1 { font-family: var(--f-head); font-weight: 600; font-size: 34px; line-height: 1.15; margin: 0; letter-spacing: -.01em; }
+.id .post { margin: 10px 0 0; font-size: 15px; line-height: 1.5; }
+.id .post span { display: block; color: var(--muted); }
+.id dl { margin: 28px 0 0; padding-top: 20px; border-top: 1px solid var(--rule); display: grid; gap: 14px; font-size: 14px; }
+.id dt { font-family: var(--f-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.id dd { margin: 2px 0 0; overflow-wrap: anywhere; }
+.copy { margin-top: 6px; font: 500 12px var(--f-body); color: var(--accent); background: none; border: 1px solid var(--rule); border-radius: 3px; padding: 4px 10px; cursor: pointer; }
+.copy:hover { border-color: var(--accent); }
+.toc { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--rule); display: grid; gap: 4px; font-size: 14px; }
+.toc a { color: var(--muted); text-decoration: none; }
+.toc a:hover { color: var(--ink); }
+
+/* main column */
+main section { padding-block: 0 44px; margin-bottom: 44px; border-bottom: 1px solid var(--rule); }
+main section:last-child { border-bottom: 0; margin-bottom: 0; }
+h2 { font-family: var(--f-head); font-weight: 600; font-size: 24px; line-height: 1.3; margin: 0 0 18px; }
+h3 { font-family: var(--f-head); font-weight: 600; font-size: 18px; line-height: 1.35; margin: 0; }
+p { margin: 0 0 1em; max-width: 68ch; }
+.summary { font-family: var(--f-head); font-size: 20px; line-height: 1.55; max-width: 60ch; margin-bottom: 1.1em; }
+
+/* research */
+.interests { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 36px; margin-top: 8px; }
+.interests p { font-size: 15px; color: var(--muted); margin: 6px 0 0; }
+figure.fig { margin: 32px 0 0; background: var(--panel); border: 1px solid var(--rule); padding: 20px; display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 24px; align-items: center; }
+figure.fig canvas { width: 100%; height: auto; aspect-ratio: 1; display: block; max-width: 100%; }
+figure.fig figcaption { font-size: 13.5px; line-height: 1.6; color: var(--muted); }
+figure.fig figcaption b { color: var(--ink); font-weight: 600; }
+
+/* lists with dates */
+.rows { list-style: none; margin: 0; padding: 0; }
+.rows li { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 24px; padding-block: 14px; border-top: 1px solid var(--rule); }
+.rows li:first-child { border-top: 0; padding-top: 0; }
+.rows .when { font-family: var(--f-mono); font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; padding-top: 2px; }
+.rows p { margin: 2px 0 0; color: var(--muted); font-size: 15px; }
+
+/* publications */
+.pubs { margin: 0; padding-left: 1.6em; }
+.pubs li { padding-left: 6px; margin-bottom: 18px; font-size: 15px; line-height: 1.6; }
+.pubs li::marker { font-family: var(--f-mono); font-size: 12px; color: var(--muted); }
+.pubs .t { font-family: var(--f-head); font-size: 17px; color: var(--ink); text-decoration: none; }
+.pubs .t:hover { text-decoration: underline; color: var(--accent); }
+.pubs .a { display: block; color: var(--muted); }
+.pubs .j { display: block; }
+.note { font-size: 14px; color: var(--muted); }
+
+.tools { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 4px 0 0; padding: 0; list-style: none; font-size: 15px; }
+.tools li::after { content: "·"; margin-left: 18px; color: var(--rule); }
+.tools li:last-child::after { content: ""; }
+
+footer { max-width: 1120px; margin: 0 auto; border-top: 1px solid var(--rule); padding-block: 24px 40px; font-size: 13px; color: var(--muted); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+
+@media (max-width: 860px) {
+  .page { grid-template-columns: 1fr; gap: 40px; padding-block: 36px 48px; }
+  .id { position: static; }
+  .toc { display: none; }
+  .interests { grid-template-columns: 1fr; gap: 22px; }
+  figure.fig { grid-template-columns: 1fr; }
+  figure.fig canvas { max-width: 240px; }
+  .rows li { grid-template-columns: 1fr; gap: 2px; }
+}
+</style>
+</head>
+<body>
+
+<div class="page">
+  <aside class="id">
+    <h1>Dr. Gokaran Shukla</h1>
+    <p class="post">Postdoctoral Research Fellow<span>King Abdullah University of Science and Technology (KAUST)</span></p>
+    <dl>
+      <div><dt>Field</dt><dd>Computational condensed matter physics and materials science</dd></div>
+      <div><dt>Email</dt><dd><span id="email">gokaran.shukla@kaust.edu.sa</span><br><button class="copy" id="copyBtn" type="button">Copy email</button></dd></div>
+      <div><dt>Address</dt><dd>KAUST, Thuwal 23955-6900<br>Kingdom of Saudi Arabia</dd></div>
+      <div><dt>Profiles</dt><dd><a href="https://scholar.google.com/citations?user=ChR9ktYAAAAJ&amp;hl=en">Google Scholar</a><br><a href="https://github.com/Gokaran-Shukla">GitHub</a></dd></div>
+    </dl>
+    <nav class="toc" aria-label="Contents">
+      <a href="#biography">Biography</a>
+      <a href="#research">Research</a>
+      <a href="#appointments">Appointments</a>
+      <a href="#education">Education</a>
+      <a href="#publications">Publications</a>
+      <a href="#supervision">Supervision</a>
+      <a href="#methods">Methods</a>
+    </nav>
+  </aside>
+
+  <main>
+    <section id="biography">
+      <h2>Biography</h2>
+      <p class="summary">Gokaran Shukla is a theoretical and computational physicist who studies how electrons transport charge, spin and orbital angular momentum in quantum materials and across their interfaces.</p>
+      <p>He is a Postdoctoral Research Fellow at King Abdullah University of Science and Technology (KAUST), Saudi Arabia, where he has worked since January 2022. Before joining KAUST he was a postdoctoral researcher in the Department of Chemistry at the Ulsan National Institute of Science and Technology (UNIST), Korea, in the group of Prof. Geunsik Lee.</p>
+      <p>He received his PhD in Physics from Trinity College Dublin, with a thesis on the computational design of magnetic tunnel junctions, and his B.Tech. and M.Tech. degrees in Materials Science and Engineering from the Indian Institute of Technology Kanpur. His work combines density functional theory, Wannier-function tight-binding models and purpose-built GPU codes, and is carried out in close collaboration with experimental groups in spintronics.</p>
+    </section>
+
+    <section id="research">
+      <h2>Research interests</h2>
+      <div class="interests">
+        <div><h3>Spin and orbital Hall effects</h3><p>Intrinsic spin and orbital Hall conductivity tensors of transition metals, oxides and two-dimensional MXenes, including the comparison of atom-centred and modern-theory orbital moments.</p></div>
+        <div><h3>Spin–orbit and orbital torques</h3><p>Spin and orbital Edelstein effects and unconventional torques at ferromagnet interfaces with transition-metal dichalcogenides, Weyl semimetals, kagome metals and altermagnets.</p></div>
+        <div><h3>Berry curvature and nonlinear Hall transport</h3><p>Berry curvature dipoles and higher-order Hall responses in low-symmetry, ferroelectric and Janus van der Waals bilayers.</p></div>
+        <div><h3>Spin-polarised quantum transport</h3><p>Non-equilibrium Green's function design of magnetic tunnel junctions and tunnel barriers for high spin-polarised current.</p></div>
+        <div><h3>Superconductivity</h3><p>Electron–phonon coupling and Migdal–Eliashberg theory for boride superconductors, and data-driven prediction of transition temperatures.</p></div>
+        <div><h3>Correlated electron methods</h3><p>Slave-boson approaches for correlated kagome metals and quantum algorithms for fermionic lattice models.</p></div>
+      </div>
+      <figure class="fig">
+        <canvas id="bz" width="600" height="600" role="img" aria-label="Schematic momentum-space spin texture across a hexagonal Brillouin zone"></canvas>
+        <figcaption><b>Figure 1.</b> Schematic momentum-space spin texture ⟨σ⟩(<i>k</i>) across a hexagonal Brillouin zone. Arrows give the in-plane spin direction; colour gives the sign of σ<sub>z</sub>, which is opposite at the K and K′ valleys. Textures of this kind underlie the Edelstein effect and the interfacial torques studied in this work.</figcaption>
+      </figure>
+    </section>
+
+    <section id="appointments">
+      <h2>Appointments</h2>
+      <ol class="rows">
+        <li><span class="when">2022 – present</span><div><h3>Postdoctoral Research Fellow</h3><p>King Abdullah University of Science and Technology (KAUST), Thuwal, Saudi Arabia</p></div></li>
+        <li><span class="when">2020 – 2021</span><div><h3>Postdoctoral Researcher</h3><p>Department of Chemistry, Ulsan National Institute of Science and Technology (UNIST), Korea. Group of Prof. Geunsik Lee</p></div></li>
+      </ol>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <ol class="rows">
+        <li><span class="when">2018</span><div><h3>PhD in Physics</h3><p>Trinity College Dublin, Ireland. Thesis: computational design of magnetic tunnel junctions. Supervisor: Prof. Stefano Sanvito</p></div></li>
+        <li><span class="when">B.Tech., M.Tech.</span><div><h3>Materials Science and Engineering</h3><p>Indian Institute of Technology Kanpur, India</p></div></li>
+      </ol>
+    </section>
+
+    <section id="publications">
+      <h2>Selected publications</h2>
+      <ol class="pubs" reversed>
+        <li><a class="t" href="https://doi.org/10.1038/s43246-026-01080-6">Higher-order Hall response arises from octupole order and scalar spin chirality in a noncollinear antiferromagnet</a>
+          <span class="a">A. Rajan, T. G. Saunderson, F. R. Lux, … <b>G. Shukla</b>, … U. Schwingenschlögl, … J. Sinova, G. Jakob, Y. Mokrousov, A. Manchon, M. Kläui</span>
+          <span class="j"><i>Communications Materials</i> <b>7</b>, 73 (2026)</span></li>
+        <li><a class="t" href="https://doi.org/10.1039/d4cp04146a">Tunnel barriers for Fe-based spin valves providing high spin-polarized current</a>
+          <span class="a"><b>G. Shukla</b>, H. M. Abdullah, U. Schwingenschlögl</span>
+          <span class="j"><i>Physical Chemistry Chemical Physics</i> <b>27</b>, 2732 (2025)</span></li>
+        <li><a class="t" href="https://doi.org/10.1039/d3nr04143c">Potential of AlP and GaN as barriers in magnetic tunnel junctions</a>
+          <span class="a"><b>G. Shukla</b>, H. M. Abdullah, U. Schwingenschlögl</span>
+          <span class="j"><i>Nanoscale</i> <b>15</b>, 15161 (2023)</span></li>
+        <li><a class="t" href="https://doi.org/10.1039/d3cp00833a">ZnSe and ZnTe as tunnel barriers for Fe-based spin valves</a>
+          <span class="a"><b>G. Shukla</b>, A. Ray, H. M. Abdullah, S. Tyagi, A. Manchon, S. Sanvito, U. Schwingenschlögl</span>
+          <span class="j"><i>Physical Chemistry Chemical Physics</i> <b>25</b>, 13533 (2023)</span></li>
+        <li><a class="t" href="https://doi.org/10.1103/PhysRevB.105.184427">Fe- and Co-based magnetic tunnel junctions with AlN and ZnO spacers</a>
+          <span class="a"><b>G. Shukla</b>, S. Sanvito, G. Lee</span>
+          <span class="j"><i>Physical Review B</i> <b>105</b>, 184427 (2022)</span></li>
+        <li><a class="t" href="https://doi.org/10.1103/PhysRevB.95.184410">HfO₂ and SiO₂ as barriers in magnetic tunneling junctions</a>
+          <span class="a"><b>G. Shukla</b>, T. Archer, S. Sanvito</span>
+          <span class="j"><i>Physical Review B</i> <b>95</b>, 184410 (2017)</span></li>
+      </ol>
+      <p class="note">A complete and current list is maintained on <a href="https://scholar.google.com/citations?user=ChR9ktYAAAAJ&amp;hl=en">Google Scholar</a>.</p>
+    </section>
+
+    <section id="supervision">
+      <h2>Doctoral co-supervision</h2>
+      <ol class="rows">
+        <li><span class="when">2026 – present</span><div><h3>Shatha Alghamdi</h3><p>PhD candidate</p></div></li>
+        <li><span class="when">2024 – present</span><div><h3>Ghaith A. Nadhreen</h3><p>PhD candidate</p></div></li>
+        <li><span class="when">2023 – present</span><div><h3>Reem Alharbi</h3><p>PhD candidate, KAUST</p></div></li>
+      </ol>
+    </section>
+
+    <section id="methods">
+      <h2>Computational methods</h2>
+      <p>Plane-wave density functional theory, maximally localised Wannier functions, Kubo linear and nonlinear response theory, non-equilibrium Green's functions, density functional perturbation theory for electron–phonon coupling, and custom CUDA codes for dense Brillouin-zone integration on high-performance computing systems.</p>
+      <ul class="tools">
+        <li>VASP</li><li>Quantum ESPRESSO</li><li>Wannier90</li><li>WannierBerri</li><li>SIESTA / SMEAGOL</li><li>EPW</li><li>OpenMX</li><li>Python, CuPy, CUDA</li><li>Slurm, Ray</li>
+      </ul>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <span>© 2026 Gokaran Shukla</span>
+  <span>King Abdullah University of Science and Technology, Thuwal, Saudi Arabia</span>
+</footer>
+
+<script>
+(() => {
+  const btn = document.getElementById('copyBtn');
+  btn.addEventListener('click', () => {
+    const el = document.getElementById('email');
+    const done = () => { btn.textContent = 'Copied'; setTimeout(() => btn.textContent = 'Copy email', 1500); };
+    const fallback = () => { const r = document.createRange(); r.selectNodeContents(el); const s = getSelection(); s.removeAllRanges(); s.addRange(r); };
+    try { navigator.clipboard.writeText(el.textContent).then(done, fallback); } catch (e) { fallback(); }
+  });
+
+  // Static Figure 1: spin texture on a hexagonal Brillouin zone
+  const cv = document.getElementById('bz'), ctx = cv.getContext('2d');
+  const N = 600, C = N / 2, R = N * 0.42;
+  const hex = [];
+  for (let i = 0; i < 6; i++) { const a = Math.PI / 6 + i * Math.PI / 3; hex.push([C + R * Math.cos(a), C + R * Math.sin(a)]); }
+  const inPoly = (x, y) => { let c = false; for (let i = 0, j = 5; i < 6; j = i++) { const [xi, yi] = hex[i], [xj, yj] = hex[j]; if (((yi > y) !== (yj > y)) && (x < (xj - xi) * (y - yi) / (yj - yi) + xi)) c = !c; } return c; };
+  const pts = [], step = 30, dy = step * Math.sqrt(3) / 2;
+  for (let y = C - R, row = 0; y <= C + R; y += dy, row++) for (let x = C - R; x <= C + R; x += step) { const xx = x + (row % 2 ? step / 2 : 0); if (inPoly(xx, y)) pts.push([xx, y]); }
+  const Ks = hex.map(([x, y], i) => [x, y, i % 2 ? -1 : 1]);
+
+  function draw() {
+    const s = getComputedStyle(document.documentElement);
+    const dark = s.colorScheme === 'dark' || (matchMedia('(prefers-color-scheme: dark)').matches && document.documentElement.getAttribute('data-theme') !== 'light') || document.documentElement.getAttribute('data-theme') === 'dark';
+    const up = dark ? '#ef7a8f' : '#b0283f', dn = dark ? '#7fa2ec' : '#24499e';
+    const rule = s.getPropertyValue('--rule').trim(), muted = s.getPropertyValue('--muted').trim();
+    ctx.clearRect(0, 0, N, N);
+    ctx.beginPath(); hex.forEach(([x, y], i) => i ? ctx.lineTo(x, y) : ctx.moveTo(x, y)); ctx.closePath();
+    ctx.strokeStyle = muted; ctx.lineWidth = 1.5; ctx.stroke();
+    ctx.fillStyle = muted; ctx.font = '22px "IBM Plex Mono", monospace'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    ctx.fillText('Γ', C, C + 26); ctx.fillText('K', hex[0][0] + 22, hex[0][1] + 10); ctx.fillText('K′', hex[5][0] + 26, hex[5][1] - 8);
+    for (const [x, y] of pts) {
+      const kx = (x - C) / R, ky = (y - C) / R, r = Math.hypot(kx, ky);
+      const phi = Math.atan2(ky, kx) + Math.PI / 2;
+      let sz = 0; for (const [x0, y0, sg] of Ks) { const d = Math.hypot(x - x0, y - y0) / R; sz += sg * Math.exp(-d * d / 0.09); }
+      sz = Math.max(-1, Math.min(1, sz));
+      const L = 11 * (0.35 + 0.65 * Math.sqrt(1 - sz * sz)) * Math.min(1, 0.35 + r);
+      const col = sz >= 0 ? up : dn;
+      ctx.globalAlpha = 0.35 + 0.65 * Math.min(1, Math.abs(sz) + 0.25);
+      ctx.strokeStyle = col; ctx.fillStyle = col; ctx.lineWidth = 2; ctx.lineCap = 'round';
+      const ddx = Math.cos(phi) * L, ddy = Math.sin(phi) * L;
+      ctx.beginPath(); ctx.moveTo(x - ddx, y - ddy); ctx.lineTo(x + ddx, y + ddy); ctx.stroke();
+      const hx = Math.cos(phi), hy = Math.sin(phi), h = 5.5;
+      ctx.beginPath(); ctx.moveTo(x + ddx + hx * 2, y + ddy + hy * 2);
+      ctx.lineTo(x + ddx - hx * h - hy * h * 0.6, y + ddy - hy * h + hx * h * 0.6);
+      ctx.lineTo(x + ddx - hx * h + hy * h * 0.6, y + ddy - hy * h - hx * h * 0.6); ctx.closePath(); ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+  }
+  draw();
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change', draw);
+  new MutationObserver(draw).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+})();
+</script>
+
+</body>
+</html>
