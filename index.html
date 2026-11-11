@@ -140,6 +140,7 @@ p { margin: 0 0 1em; max-width: 68ch; }
 .area .eq { font: 13px var(--f-mono); color: var(--accent); }
 .area h3 { font-family: var(--f-display); font-weight: 500; font-size: 21px; line-height: 1.25; margin: 0; }
 .area p { font-size: 14.5px; color: var(--muted); margin: 0; }
+.area .sw-links { margin-top: auto; padding-top: 6px; font: 12.5px var(--f-mono); }
 
 /* timeline */
 .tl { list-style: none; margin: 0; padding: 0; position: relative; }
@@ -240,6 +241,7 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
       <a href="#publications">Publications</a>
       <a href="#collaborations">Collaborations</a>
       <a href="#methods">Methods</a>
+      <a href="#software">Software</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -409,6 +411,20 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
           <div><small>Stage 2</small><h3>Wannier models</h3><p>Maximally localised Wannier functions and tight-binding Hamiltonians. Wannier90.</p></div>
           <div><small>Stage 3</small><h3>Response theory</h3><p>Kubo linear and nonlinear responses on dense k-meshes. In-house CuPy/CUDA, WannierBerri.</p></div>
           <div><small>Stage 4</small><h3>Transport and phonons</h3><p>NEGF tunnelling with SIESTA/SMEAGOL; electron–phonon coupling with EPW.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec gut" id="software">
+    <div class="wrap">
+      <div class="label"><small>07 · Software</small><h2>Open-source codes</h2></div>
+      <div>
+        <p>Codes I develop and maintain for my own research, released openly with test suites that check every formula against exact results.</p>
+        <div class="areas">
+          <article class="area"><span class="eq">J<sub>ij</sub>, <b>D</b><sub>ij</sub>, A<sub>i</sub>, ω(<b>q</b>)</span><h3>magex</h3><p>Magnetic exchange tensors, Dzyaloshinskii–Moriya interaction, magnetic anisotropy and spin waves from Wannier90 Hamiltonians. Rotationally invariant Green's-function method, MPI-parallel.</p><p class="sw-links"><a href="https://github.com/Gokaran-Shukla/magex">GitHub</a> · Python · MIT</p></article>
+          <article class="area"><span class="eq">R, Λ, Z = R<sup>†</sup>R</span><h3>risb-wannier</h3><p>Rotationally invariant slave-boson (Gutzwiller) solver for multi-orbital Hubbard models on Wannier90 Hamiltonians, with approximate charge self-consistency and multi-core parallelism.</p><p class="sw-links"><a href="https://github.com/Gokaran-Shukla/risb-wannier">GitHub</a> · Python · MIT</p></article>
+          <article class="area"><span class="eq">DFT + RISB</span><h3>ComRISB, modernised</h3><p>The comscope DFT+RISB package updated for Python 3.13, NumPy 2, gfortran 13 and Wannier90 3.1, with fixes to charge self-consistency on multiple MPI ranks and to U-scan continuation.</p><p class="sw-links"><a href="https://github.com/Gokaran-Shukla/ComRISB/tree/modernize">GitHub</a> · Fortran/Python · <span style="white-space:nowrap">GPL-3.0</span></p></article>
         </div>
       </div>
     </div>
